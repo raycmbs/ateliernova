@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Atelier Nova — Galerie d'art 100 % digitale</title>
+  <meta name="description" content="Atelier Nova relie des artistes émergents à une nouvelle génération de collectionneurs. Une galerie d'art 100 % digitale, basée à Barcelone.">
+  <meta name="theme-color" content="#0d0f12">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" href="assets/logo-mark.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=Poppins:wght@500&display=swap">
+  <link rel="preload" as="image" href="assets/house-bg.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/house-fg.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+
+    <!-- ───────────── HERO ───────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="stage stage--bg" aria-hidden="true">
+        <img class="stage__img" src="assets/house-bg.webp" width="1200" height="1000" alt="" decoding="async" fetchpriority="high">
+      </div>
+
+      <h1 class="wordmark" id="hero-title" aria-label="Atelier Nova">
+        <span class="wordmark__line" aria-hidden="true"><span class="wordmark__char" style="--i:0">a</span><span class="wordmark__char" style="--i:1">t</span><span class="wordmark__char" style="--i:2">e</span><span class="wordmark__char" style="--i:3">l</span><span class="wordmark__char" style="--i:4">i</span><span class="wordmark__char" style="--i:5">e</span><span class="wordmark__char" style="--i:6">r</span><span class="wordmark__char wordmark__space" style="--i:7"></span><span class="wordmark__char" style="--i:8">n</span><span class="wordmark__char" style="--i:9">o</span><span class="wordmark__char" style="--i:10">v</span><span class="wordmark__char" style="--i:11">a</span></span>
+      </h1>
+
+      <div class="stage stage--fg" aria-hidden="true">
+        <img class="stage__img" src="assets/house-fg.webp" width="1200" height="1000" alt="" decoding="async" fetchpriority="high">
+      </div>
+
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <header class="nav" data-reveal>
+        <a class="brand" href="#hero" aria-label="Atelier Nova, accueil">
+          <img class="brand__mark" src="assets/logo-mark.png" width="362" height="343" alt="">
+          <span class="brand__name">Atelier Nova</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Principal" data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4">
+          <a class="nav__link is-active" href="#hero" aria-current="page">Accueil</a>
+          <a class="nav__link" href="#galerie">La galerie</a>
+          <a class="nav__link" href="#agence">L'agence</a>
+          <a class="nav__link" href="#mission">Mission</a>
+          <a class="nav__link" href="#contact">Contact</a>
+        </nav>
+
+        <a class="cta" href="#contact">
+          <span>Recevoir le catalogue</span>
+          <span class="cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+
+        <button class="menu-btn" type="button" data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </header>
+
+      <div class="mobile-menu" id="mobile-menu" hidden data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4">
+        <a class="is-active" href="#hero" aria-current="page">Accueil</a>
+        <a href="#galerie">La galerie</a>
+        <a href="#agence">L'agence</a>
+        <a href="#mission">Mission</a>
+        <a href="#contact">Contact</a>
+        <a class="mobile-menu__cta" href="#contact">Recevoir le catalogue</a>
+      </div>
+
+      <nav class="index" data-reveal aria-label="Raccourcis">
+        <a class="index__row" href="#galerie" data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4"><span class="index__num">01</span><span class="index__label">La galerie</span><span class="index__count">5 salles</span></a>
+        <a class="index__row" href="#agence" data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4"><span class="index__num">02</span><span class="index__label">L'agence</span><span class="index__count">Barcelone</span></a>
+        <a class="index__row" href="#contact" data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="4"><span class="index__num">03</span><span class="index__label">Contact</span><span class="index__count">Artistes · acheteurs</span></a>
+      </nav>
+
+      <div class="foot">
+        <a class="feature" href="#galerie" data-reveal data-glass data-glass-refraction="80" data-glass-depth="20" data-glass-dispersion="50" data-glass-frost="32">
+          <span class="feature__eyebrow"><span class="feature__live" aria-hidden="true"></span>Visite libre</span>
+          <span class="feature__name">Entrer dans la galerie</span>
+          <span class="feature__place">Faites défiler pour avancer, salle après salle</span>
+          <span class="feature__specs"><span>5 salles</span><span>20 œuvres</span><span>100 % digital</span></span>
+          <span class="feature__foot">
+            <span class="feature__price">Atelier Nova</span>
+            <span class="feature__go">Commencer la visite
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </span>
+        </a>
+
+        <div class="lede" data-reveal>
+          <p lang="en">Connecting raw contemporary art with a new generation of collectors.</p>
+          <p class="lede__fr">Relier l'art contemporain brut à une nouvelle génération de collectionneurs.</p>
+          <a class="lede__link" href="#agence">Découvrir l'agence
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── GALERIE : visite au scroll ───────────── -->
+    <section class="tour" id="galerie" aria-labelledby="tour-title">
+      <div class="tour__sticky">
+        <div class="tour__viewport" id="tour-viewport">
+          <div class="tour__world" id="tour-world"></div>
+        </div>
+        <div class="tour__vignette" aria-hidden="true"></div>
+
+        <ol class="tour__beats" id="tour-beats"></ol>
+
+        <button class="tour__list-btn" type="button" id="open-list">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12M2 8h12M2 12.5h12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Vue liste des œuvres
+        </button>
+        <a class="tour__skip" href="#agence">Passer la visite</a>
+        <div class="tour__progress" aria-hidden="true"><span></span></div>
+      </div>
+      <h2 class="sr-only" id="tour-title">La galerie Atelier Nova : visite des cinq salles</h2>
+    </section>
+
+    <!-- ───────────── L'AGENCE ───────────── -->
+    <section class="about section" id="agence" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <div class="about__head" data-rise>
+          <p class="eyebrow">L'agence</p>
+          <h2 class="display" id="about-title">Une galerie sans murs,<br><em>ni mystère.</em></h2>
+        </div>
+        <div class="about__body" data-rise>
+          <p class="lead">Atelier Nova est une structure indépendante de courtage et de curation artistique basée à Barcelone.</p>
+          <p>Pensée pour s'affranchir des codes opaques et traditionnels des galeries classiques, l'agence connecte des artistes émergents à fort potentiel avec une nouvelle génération de collectionneurs, de jeunes entrepreneurs et de cadres supérieurs en quête de pièces singulières pour leurs intérieurs et leurs espaces professionnels.</p>
+        </div>
+        <figure class="about__paper" data-rise>
+          <img src="assets/paper-logo.webp" width="1100" height="548" alt="Logo Atelier Nova gravé sur papier : « Connecting raw contemporary art with a new generation of collectors »" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────── MISSION & HISTOIRE ───────────── -->
+    <section class="mission section" id="mission" aria-labelledby="mission-title">
+      <div class="wrap">
+        <div class="mission__head" data-rise>
+          <p class="eyebrow">Notre mission</p>
+          <h2 class="display" id="mission-title">Éliminer les barrières<br><em>du marché de l'art.</em></h2>
+          <p class="lead">Proposer une curation rigoureuse, transparente et agile. Un modèle 100 % digital, sans stock ni charges lourdes, qui garantit une acquisition fluide, exclusive et sur-mesure entre créateurs et acheteurs, à travers toute l'Europe.</p>
+        </div>
+
+        <ul class="pillars">
+          <li data-rise><span class="pillars__n">01</span><h3>Rigoureuse</h3><p>Chaque œuvre est choisie, pas simplement listée. Nous défendons un regard, celui d'une curation exigeante qui repère les artistes émergents à fort potentiel.</p></li>
+          <li data-rise><span class="pillars__n">02</span><h3>Transparente</h3><p>Pas de codes réservés aux initiés. Les œuvres, leurs conditions et la manière d'acquérir sont expliquées simplement, avant que vous ne vous engagiez.</p></li>
+          <li data-rise><span class="pillars__n">03</span><h3>Agile</h3><p>100 % digital, sans stock ni charges lourdes. Une acquisition fluide et sur-mesure, pensée pour la vie de ceux qui achètent comme de ceux qui créent.</p></li>
+        </ul>
+
+        <div class="story" id="histoire">
+          <div class="story__head" data-rise>
+            <p class="eyebrow">Notre histoire</p>
+            <h2 class="display display--sm">Deux mondes qui <em>ne se croisaient pas.</em></h2>
+          </div>
+          <div class="story__body" data-rise>
+            <p>D'un côté, des artistes émergents au travail singulier, qui peinent à trouver des acheteurs en dehors des circuits traditionnels. De l'autre, de jeunes amateurs d'art et de jeunes entrepreneurs qui veulent faire entrer des œuvres dans leur quotidien, mais que les galeries classiques intimident.</p>
+            <p>Atelier Nova est née à Barcelone pour relier ces deux mondes. Sans vitrine à entretenir ni stock à immobiliser, nous mettons toute notre énergie dans l'essentiel : choisir, expliquer, mettre en relation.</p>
+            <p>Aujourd'hui, nous accompagnons les artistes qui nous rejoignent et guidons chaque nouvel acheteur, du premier coup de cœur à l'œuvre accrochée chez lui ou dans ses bureaux.</p>
+          </div>
+        </div>
+
+        <div class="both" data-rise>
+          <div class="both__card">
+            <p class="eyebrow">Pour les artistes</p>
+            <h3>Trouver les bons acheteurs</h3>
+            <p>Faites découvrir votre travail à une nouvelle génération de collectionneurs, en Europe, sans les lourdeurs d'une galerie classique.</p>
+          </div>
+          <div class="both__card">
+            <p class="eyebrow">Pour les acheteurs</p>
+            <h3>Entrer simplement dans l'art</h3>
+            <p>Un accompagnement clair pour choisir une première pièce, ou la suivante, pour votre intérieur ou vos espaces professionnels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__grid">
+        <div class="contact__intro" data-rise>
+          <p class="eyebrow">Contact</p>
+          <h2 class="display" id="contact-title">Parlons <em>d'art.</em></h2>
+          <p class="lead">Vous êtes artiste ou acheteur ? Recevez notre catalogue par e-mail, ou envoyez-nous une demande : nous revenons vers vous personnellement.</p>
+          <p class="contact__where">Atelier Nova · Barcelone, Espagne</p>
+        </div>
+
+        <form class="form" id="contact-form" novalidate data-rise>
+          <fieldset class="seg" id="seg-role">
+            <legend class="sr-only">Vous êtes</legend>
+            <label><input type="radio" name="role" value="artiste" checked><span>Je suis artiste</span></label>
+            <label><input type="radio" name="role" value="acheteur"><span>Je suis acheteur</span></label>
+          </fieldset>
+
+          <fieldset class="choice" id="seg-action">
+            <legend>Que souhaitez-vous ?</legend>
+            <label class="choice__opt"><input type="radio" name="action" value="catalogue" checked><span><b>Recevoir le catalogue</b><small>par e-mail, sans engagement</small></span></label>
+            <label class="choice__opt"><input type="radio" name="action" value="demande"><span><b>Envoyer une demande</b><small>nous vous répondons personnellement</small></span></label>
+          </fieldset>
+
+          <div class="row">
+            <div class="field"><label for="f-name">Nom complet</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+
+          <div class="only only--artiste">
+            <div class="row">
+              <div class="field"><label for="f-portfolio">Site ou Instagram <span class="opt">(facultatif)</span></label><input id="f-portfolio" name="portfolio" type="text" placeholder="instagram.com/votre-nom"></div>
+              <div class="field"><label for="f-discipline">Discipline</label>
+                <select id="f-discipline" name="discipline">
+                  <option value="">Choisir…</option><option>Peinture</option><option>Dessin</option><option>Photographie</option><option>Sculpture</option><option>Art numérique</option><option>Technique mixte</option><option>Autre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="only only--acheteur" hidden>
+            <div class="row">
+              <div class="field"><label for="f-space">Pour quel lieu ?</label>
+                <select id="f-space" name="space">
+                  <option value="">Choisir…</option><option>Mon intérieur</option><option>Mon entreprise, mes bureaux</option><option>Un cadeau</option><option>Je commence ma collection</option>
+                </select>
+              </div>
+              <div class="field"><label for="f-budget">Budget indicatif <span class="opt">(facultatif)</span></label>
+                <select id="f-budget" name="budget">
+                  <option value="">Je préfère en parler</option><option>Moins de 500 €</option><option>500 – 2 000 €</option><option>2 000 – 5 000 €</option><option>Plus de 5 000 €</option>
+                </select>
+              </div>
+            </div>
+            <fieldset class="chips">
+              <legend>Ce qui vous attire</legend>
+              <label><input type="checkbox" name="taste" value="Matière"><span>Matière</span></label>
+              <label><input type="checkbox" name="taste" value="Couleur"><span>Couleur</span></label>
+              <label><input type="checkbox" name="taste" value="Géométrie"><span>Géométrie</span></label>
+              <label><input type="checkbox" name="taste" value="Lumière"><span>Lumière</span></label>
+              <label><input type="checkbox" name="taste" value="Silence"><span>Silence</span></label>
+            </fieldset>
+          </div>
+
+          <div class="field field--msg" id="msg-field" hidden>
+            <label for="f-message">Votre message</label>
+            <textarea id="f-message" name="message" rows="4"></textarea>
+          </div>
+
+          <label class="consent"><input type="checkbox" name="consent" required><span>J'accepte que mes informations soient utilisées par Atelier Nova pour me répondre et m'envoyer le catalogue.</span></label>
+
+          <p class="form__error" id="form-error" role="alert" hidden></p>
+          <button class="btn" type="submit"><span id="submit-label">Recevoir le catalogue</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="form__done" id="form-done" role="status" hidden tabindex="-1">
+            <h3 id="done-title">Merci !</h3>
+            <p id="done-text"></p>
+            <p class="form__demo" id="done-demo" hidden>Mode démo : aucun serveur n'est encore relié au formulaire, ces informations n'ont pas été envoyées.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__in">
+      <a class="footer__brand" href="#hero" aria-label="Atelier Nova, retour en haut">
+        <img src="assets/logo-mark.png" width="362" height="343" alt="">
+        <span>Atelier Nova</span>
+      </a>
+      <p class="footer__tag" lang="en">Connecting raw contemporary art with a new generation of collectors</p>
+      <nav class="footer__nav" aria-label="Pied de page">
+        <a href="#galerie">La galerie</a><a href="#agence">L'agence</a><a href="#mission">Mission</a><a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__legal">© 2026 Atelier Nova · Barcelone</p>
+    </div>
+  </footer>
+
+  <!-- Œuvre en grand -->
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lb-title">
+    <button class="lightbox__close" type="button" id="lb-close" aria-label="Fermer">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lightbox__img"><img id="lb-img" src="" alt=""></div>
+    <div class="lightbox__info">
+      <p class="eyebrow" id="lb-room"></p>
+      <h3 id="lb-title"></h3>
+      <p class="lightbox__artist" id="lb-artist"></p>
+      <dl>
+        <div><dt>Année</dt><dd id="lb-year"></dd></div>
+        <div><dt>Technique</dt><dd id="lb-medium"></dd></div>
+        <div><dt>Dimensions</dt><dd id="lb-size"></dd></div>
+        <div><dt>Prix</dt><dd>Communiqué sur demande</dd></div>
+      </dl>
+      <a class="btn" href="#contact" id="lb-ask">Demander cette œuvre
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </dialog>
+
+  <!-- Vue liste -->
+  <dialog class="catalog" id="catalog" aria-labelledby="cat-title">
+    <div class="catalog__bar">
+      <h3 id="cat-title">Les 20 œuvres</h3>
+      <button class="lightbox__close" type="button" id="cat-close" aria-label="Fermer">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="catalog__body" id="cat-body"></div>
+  </dialog>
+
+  <script src="artworks.js"></script>
+  <script src="hero.js" defer></script>
+  <script src="glass.js" defer></script>
+  <script src="gallery.js" defer></script>
+  <script src="site.js" defer></script>
+</body>
+</html>
