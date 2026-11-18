@@ -5,7 +5,7 @@
   //  (ex. Formspree : "https://formspree.io/f/xxxxxxx"). Tant que ce champ
   //  est vide, le formulaire fonctionne en mode démo : rien n'est envoyé.
   // ───────────────────────────────────────────────────────────────
-  const FORM_ENDPOINT = "";
+  const FORM_ENDPOINT = "https://formspree.io/f/mppdrkjr";
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
