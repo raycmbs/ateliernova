@@ -162,8 +162,11 @@
       const d = Math.abs(t - at);
       const o = reduced.matches ? (d < 0.5 ? 1 : 0) : 1 - smooth(0.16, 0.42, d);
       const dir = t < at ? 1 : -1;
-      b.style.setProperty("--o", o.toFixed(3));
-      b.style.setProperty("--y", `${(dir * (1 - o) * 16).toFixed(1)}px`);
+      
+      // Application fluide optimisée GPU
+      b.style.opacity = o.toFixed(3);
+      b.style.transform = `translateY(${(dir * (1 - o) * 16).toFixed(1)}px)`;
+      
       b.classList.toggle("is-on", o > 0.6);
       if (o > topO) { topO = o; top = b; }
     });
