@@ -1,4 +1,5 @@
-// Visite de la galerie : une caméra avance dans 5 salles en 3D CSS, pilotée par le scroll.
+// ───────────────────────────────────────────────────────────────
+//  Gallery tour: a camera moves through 5 rooms in 3D CSS, driven by scroll.
 (() => {
   const tour = document.getElementById("galerie");
   const world = document.getElementById("tour-world");
@@ -9,20 +10,20 @@
   const { ROOMS, ARTWORKS } = window.ATELIER;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
-  // ---------- Géométrie (px) ----------
-  const D = 1400;   // profondeur d'une salle
-  const W = 1000;   // largeur
-  const FY = 220;   // sol (y positif = vers le bas)
-  const CY = 300;   // plafond
+  // ---------- Geometry (px) ----------
+  const D = 1400;   // room depth
+  const W = 1000;   // width
+  const FY = 220;   // floor (positive y = downwards)
+  const CY = 300;   // ceiling
   const WH = FY + CY;
-  const DW = 260;   // largeur de la porte
-  const DH = 380;   // hauteur de la porte
-  const ART_Y = -45; // centre des tableaux
+  const DW = 260;   // doorway width
+  const DH = 380;   // doorway height
+  const ART_Y = -45; // center of artworks
   const ART_W = 230;
-  const BACK_X = 300; // centre des tableaux du fond, depuis l'axe
+  const BACK_X = 300; // center of back artworks from axis
   const N = ROOMS.length;
 
-  // Positions de la caméra (z) : dehors, centre de chaque salle, devant le mur final.
+  // Camera positions (z): outside, center of each room, in front of final wall.
   const STOPS = [900];
   for (let r = 0; r < N; r++) STOPS.push(-r * D - (r === N - 1 ? 0.3 : 0.46) * D);
   STOPS.push(-N * D + 800);
@@ -38,11 +39,11 @@
 
   const artSize = (a) => { const w = ART_W / Math.sqrt(a.ratio); return [w, w * a.ratio]; };
 
-  // cx = centre horizontal du tableau dans la face, en px
+  // cx = horizontal center of artwork in face, in px
   const artHTML = (a, i, cx) => {
     const [w, h] = artSize(a);
     const top = ART_Y + CY - h / 2;
-    return `<button class="art" type="button" data-i="${i}" style="left:${(cx - w / 2).toFixed(1)}px;top:${top.toFixed(1)}px;width:${w.toFixed(1)}px;height:${h.toFixed(1)}px" aria-label="${esc(a.title)}, ${esc(a.artist)}. Voir l'œuvre">
+    return `<button class="art" type="button" data-i="${i}" style="left:${(cx - w / 2).toFixed(1)}px;top:${top.toFixed(1)}px;width:${w.toFixed(1)}px;height:${h.toFixed(1)}px" aria-label="${esc(a.title)}, ${esc(a.artist)}. View artwork">
       <span class="art__glow"></span>
       <span class="art__mat"><img src="${a.image}" alt="" draggable="false" decoding="async"></span>
       <span class="art__plaque"><b>${esc(a.title)}</b>${esc(a.artist)}</span>
@@ -70,7 +71,7 @@
     return `<div class="room" data-r="${r}" style="transform:translate3d(0,0,${-r * D}px)">${h}</div>`;
   };
 
-  // Façade d'entrée + sol extérieur
+  // Entrance facade + outdoor floor
   const facade = () => {
     const pw = 700;
     return `<div class="outside">
@@ -85,29 +86,29 @@
   world.innerHTML = facade() + ROOMS.map((_, r) => roomHTML(r)).join("");
   const roomEls = [...world.querySelectorAll(".room")];
 
-  // ---------- Légendes (HUD) ----------
+  // ---------- Captions (HUD) ----------
   const pad = (n) => String(n).padStart(2, "0");
   let beatsHTML = `<li class="beat beat--intro" data-at="0">
-      <p class="beat__eyebrow">Atelier Nova · galerie 100 % digitale</p>
-      <h3 class="beat__title beat__title--xl">Entrez dans<br>la galerie</h3>
-      <p class="beat__sub">Faites défiler pour avancer, salle après salle.</p>
+      <p class="beat__eyebrow">Atelier Nova · 100% digital gallery</p>
+      <h3 class="beat__title beat__title--xl">Step into<br>the gallery</h3>
+      <p class="beat__sub">Scroll down to move forward, room by room.</p>
       <span class="beat__cue" aria-hidden="true"></span></li>`;
   ROOMS.forEach((room, r) => {
     beatsHTML += `<li class="beat beat--room" data-at="${r + 1}">
-      <p class="beat__eyebrow">Salle ${pad(r + 1)} / ${pad(N)}</p>
+      <p class="beat__eyebrow">Room ${pad(r + 1)} / ${pad(N)}</p>
       <h3 class="beat__title">${esc(room.name)}</h3>
       <p class="beat__sub">${esc(room.line)}</p></li>`;
   });
   beatsHTML += `<li class="beat beat--end" data-at="${SEG}">
-      <p class="beat__eyebrow">Fin de la visite</p>
-      <h3 class="beat__title">Une œuvre vous a marqué ?</h3>
-      <p class="beat__sub">Demandez-la, ou recevez le catalogue complet par e-mail.</p>
-      <a class="beat__cta" href="#contact">Recevoir le catalogue
+      <p class="beat__eyebrow">End of tour</p>
+      <h3 class="beat__title">Did an artwork catch your eye?</h3>
+      <p class="beat__sub">Inquire about it, or get the complete catalog by email.</p>
+      <a class="beat__cta" href="#contact">Get the catalog
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9.5M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>`;
   beatsEl.innerHTML = beatsHTML;
   const beats = [...beatsEl.querySelectorAll(".beat")];
 
-  // ---------- Caméra ----------
+  // ---------- Camera ----------
   let P = 900;
   const resize = () => {
     const w = sticky.clientWidth;
@@ -185,7 +186,7 @@
   addEventListener("resize", () => { resize(); target = fromScroll(); schedule(); });
   reduced.addEventListener?.("change", () => { needs = true; schedule(); });
 
-  // Aller à une pièce (clavier, liens)
+  // Go to a room (keyboard, links)
   const scrollToStop = (k) => {
     const r = tour.getBoundingClientRect();
     const run = r.height - sticky.clientHeight;
@@ -201,7 +202,7 @@
   resize();
   schedule();
 
-  // ---------- Fiche œuvre ----------
+  // ---------- Artwork modal ----------
   const lb = document.getElementById("lightbox");
   const catalog = document.getElementById("catalog");
   const $ = (id) => document.getElementById(id);
@@ -212,7 +213,7 @@
     opener = from || document.activeElement;
     $("lb-img").src = a.image;
     $("lb-img").alt = `${a.title}, ${a.artist}`;
-    $("lb-room").textContent = `Salle ${pad(a.room)} · ${ROOMS[a.room - 1].name}`;
+    $("lb-room").textContent = `Room ${pad(a.room)} · ${ROOMS[a.room - 1].name}`;
     $("lb-title").textContent = a.title;
     $("lb-artist").textContent = a.artist;
     $("lb-year").textContent = a.year;
@@ -248,7 +249,7 @@
     lb.close();
   });
 
-  // ---------- Vue liste ----------
+  // ---------- List view ----------
   $("cat-body").innerHTML = ROOMS.map((room, r) => {
     const items = ARTWORKS.map((a, i) => [a, i]).filter(([a]) => a.room === r + 1);
     return `<section><h4><span>${pad(r + 1)}</span> ${esc(room.name)}</h4><ul>${items.map(([a, i]) =>
