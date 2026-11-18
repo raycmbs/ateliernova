@@ -1,8 +1,5 @@
 // ───────────────────────────────────────────────────────────────
 //  FORM — to be connected to a service to receive messages.
-//  Paste here the address provided by a form service
-//  (e.g., Formspree: "https://formspree.io/f/xxxxxxx"). As long as this field
-//  is empty, the form works in demo mode: nothing is sent.
 // ───────────────────────────────────────────────────────────────
 const FORM_ENDPOINT = "https://formspree.io/f/mppdrkjr";
 
@@ -64,7 +61,6 @@ form.addEventListener("submit", async (ev) => {
   if (!form.elements.consent.checked) return showErr("Please check the agreement box to continue.", form.elements.consent);
 
   const data = new FormData(form);
-  // Fields from the other profile are not sent.
   const other = val("role") === "artiste" ? ".only--acheteur" : ".only--artiste";
   $$("input, select, textarea", $(other)).forEach((el) => data.delete(el.name));
   const btn = $(".btn", form);
@@ -92,4 +88,3 @@ form.addEventListener("submit", async (ev) => {
   done.hidden = false;
   done.focus();
 });
-})();
